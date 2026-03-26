@@ -39,8 +39,8 @@ export const Button = forwardRef(
           'button--icon-only': iconOnly,
           'button--secondary': secondary,
         })}
-        href={href && isExternalLink ? href : undefined}
-        to={href && !isExternalLink ? href : undefined}
+        href={href && (isExternalLink || href[0] === '#') ? href : undefined}
+        to={href && !isExternalLink && href[0] !== '#' ? href : undefined}
         rel={rel || isExternalLink ? 'noopener noreferrer' : undefined}
         target={target || isExternalLink ? '_blank' : undefined}
         onMouseUp={blurOnMouseUp}

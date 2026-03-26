@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
 import imageMap from "assets/maps/imageMap";
 import Text from "components/Text";
@@ -49,7 +49,7 @@ const Project = ({ imgSrc, title, id, description, gitLink, siteLink, delay, maj
                     <div className="major-framework">
                         <h3 ref={titleRef} className="project-title">{title}</h3>
                         <p className="project-tool">{majorTool}</p>
-                        <img className="platform-icon" src={mt} />
+                        <img className="platform-icon" src={mt} alt="" />
                     </div>
                     <Link secondary href={gitLink} className="project-link git"> to Git </Link>
                 </div>

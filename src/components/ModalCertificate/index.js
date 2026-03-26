@@ -1,9 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import './index.css';
 
 function ModalCertificate({ showModal, setShowModal, alt, imgSrc }) {
     const [isClosing, setIsClosing] = useState(false);
-    const modalRef = useRef(null);
+
+    const closeModal = useCallback(() => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsClosing(false);
+            setShowModal(false);
+        }, 300); // Match animation duration
+    }, [setShowModal]);
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -17,15 +24,7 @@ function ModalCertificate({ showModal, setShowModal, alt, imgSrc }) {
         
 
         return () => document.removeEventListener("keydown", handleKeyDown);
-    }, [showModal]);
-
-    const closeModal = () => {
-        setIsClosing(true);
-        setTimeout(() => {
-            setIsClosing(false);
-            setShowModal(false);
-        }, 300); // Match animation duration
-    };
+    }, [showModal, closeModal]);
 
     return (
         <div className={`modal-certificate ${isClosing ? "closing" : "visible"}`}>

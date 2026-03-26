@@ -64,6 +64,7 @@
   "scripts": {
     "start": "cross-env PORT=80 NODE_OPTIONS=--openssl-legacy-provider craco start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider craco build",
+    "lint": "eslint src",
     "build-storybook": "build-storybook -o build-storybook",
     "postbuild": "cross-env VERBOSE=1 && if [ \"$VERCEL\" != \"1\" ]; then react-snap; fi",
     "test": "craco test",

@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import Image from 'components/Image';
 import Link from 'components/Link';
-import { Button } from 'components/Button';
 import Footer from 'components/Footer';
 import './index.css';
 import {
@@ -24,6 +23,7 @@ import prerender from 'utils/prerender';
 import { useTheme } from 'components/ThemeProvider';
 import 'katex/dist/katex.min.css';
 import { BlockMath, InlineMath } from 'react-katex';
+import { Table, TableRow, TableCell } from 'components/Table';
 
 import deviceModelsBackground from 'assets/imgs/speech-emotion-recognition/background.png';
 import deviceModelsBackgroundLarge from 'assets/imgs/speech-emotion-recognition/background.png';
@@ -45,9 +45,6 @@ import efficientnetArchitecture from 'assets/imgs/deepfake-detection/efficientne
 import efficientnetArchitectureLarge from 'assets/imgs/deepfake-detection/efficientnet-architecture.png';
 import efficientnetArchitecturePlaceholder from 'assets/imgs/deepfake-detection/efficientnet-architecture.png';
 
-import ensembleDiagram from 'assets/imgs/deepfake-detection/ensemble-diagram.png';
-import ensembleDiagramLarge from 'assets/imgs/deepfake-detection/ensemble-diagram.png';
-import ensembleDiagramPlaceholder from 'assets/imgs/deepfake-detection/ensemble-diagram.png';
 
 import logLoss from 'assets/imgs/deepfake-detection/logloss.png';
 import logLossLarge from 'assets/imgs/deepfake-detection/logloss.png';
@@ -68,7 +65,7 @@ import confusionMatrixPlaceholder from 'assets/imgs/deepfake-detection/confusion
 import resultsBarGraph from 'assets/imgs/deepfake-detection/results-bar-graph.png';
 import resultsBarGraphLarge from 'assets/imgs/deepfake-detection/results-bar-graph.png';
 import resultsBarGraphPlaceholder from 'assets/imgs/deepfake-detection/results-bar-graph.png';
-import Project from 'components/Project';
+
 
 
 const title = 'Deep Fake Detection';
@@ -106,7 +103,30 @@ const ProjectDM = () => {
           url="https://github.com/netazuz/Emotion-Classification/blob/main/project.ipynb"
           roles={roles}
         />
-        
+
+        <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectSectionHeading>Technical Specifications</ProjectSectionHeading>
+            <Table>
+              <TableRow>
+                <TableCell>Architecture</TableCell>
+                <TableCell>EfficientNet-B3 Backbone + Custom CNN Audio Branch</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Input Modalities</TableCell>
+                <TableCell>15 FPS Video Frames, Mel Spectrograms (Audio)</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Optimization</TableCell>
+                <TableCell>Log Loss minimization, Cosine Annealing LR Scheduler</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Framework</TableCell>
+                <TableCell>TensorFlow / Keras / MTCNN (Preprocessing)</TableCell>
+              </TableRow>
+            </Table>
+          </ProjectSectionContent>
+        </ProjectSection>
         <ProjectSection first>
           <ProjectSectionContent>
             <ProjectImage

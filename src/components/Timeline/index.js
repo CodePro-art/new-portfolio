@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import Heading from 'components/Heading';
 import prerender from 'utils/prerender';
-import DecoderText from 'components/DecoderText';
 import Text from 'components/Text';
 import { useScrollRestore, useRouteTransition } from 'hooks';
 import { tokens } from 'components/ThemeProvider/theme';

@@ -1,5 +1,5 @@
 import './index.css';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { useTheme } from 'components/ThemeProvider';
 
 const ShowMore = ({ children, maxHeight = 100 }) => {

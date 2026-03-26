@@ -21,6 +21,7 @@ import {
 import { useScrollRestore } from 'hooks';
 import { media } from 'utils/style';
 import prerender from 'utils/prerender';
+import { Table, TableRow, TableCell } from 'components/Table';
 
 import deviceModelsBackground from 'assets/imgs/speech-emotion-recognition/background.png';
 import deviceModelsBackgroundLarge from 'assets/imgs/speech-emotion-recognition/background.png';
@@ -112,7 +113,7 @@ import EmotionWheelPlaceholder from 'assets/imgs/speech-emotion-recognition/emot
 
 const title = 'Speech Emotion Recognition';
 const description =
-  'Design and development of a unique AI model that can recognize human emotion in speech audio.';
+  'Design and development of a specialized AI model that recognizes human emotion in speech audio.';
 const roles = [
   'Classic Machine Learning',
   'Deep Learning',
@@ -142,7 +143,30 @@ const ProjectDM = () => {
           url="https://github.com/netazuz/Emotion-Classification/blob/main/project.ipynb"
           roles={roles}
         />
-        
+
+        <ProjectSection>
+          <ProjectSectionContent>
+            <ProjectSectionHeading>Technical Specifications</ProjectSectionHeading>
+            <Table>
+              <TableRow>
+                <TableCell>Signal Processing</TableCell>
+                <TableCell>MFCC, Spectral Centroid, Zero-Crossing Rate, Chroma Vectors</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Classification</TableCell>
+                <TableCell>Ensemble Random Forests, SVM, Gradient Boosting</TableCell>
+              </TableRow>
+               <TableRow>
+                <TableCell>Feature Reduction</TableCell>
+                <TableCell>PCA (Principal Component Analysis), t-SNE Reconstruction</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Deep Learning</TableCell>
+                <TableCell>Keras Deep Neural Network (98% Accuracy Achieved)</TableCell>
+              </TableRow>
+            </Table>
+          </ProjectSectionContent>
+        </ProjectSection>
         <ProjectSection first>
           <ProjectSectionContent>
             <ProjectImage
